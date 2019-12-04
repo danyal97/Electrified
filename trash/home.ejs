@@ -1,0 +1,602 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Electrified</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/5.3.3/bootbox.min.js">
+</head>
+
+<body>
+
+    <header>
+
+
+
+        <% if (nopattern) { %>
+        <div id="myModal" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <!-- dialog body -->
+                    <div class="modal-body">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <%=message%>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <% } %>
+        <div class="custom-nav-container d-flex align-items-center justify-content-between px-2 py-1 shadow-sm">
+            <a class="text-clipped navbar-brand" href="index.html">
+                <i class="fal fa-bolt d-flex">
+                    <span class="m-auto"> Electrified</span>
+                </i>
+
+            </a>
+            <div class="main-nav-outer d-flex">
+                <i class="fal fa-times text-clipped menu-close-icon d-lg-none"></i>
+                <nav class="nav-main navbar navbar-light navbar-expand-lg text-center m-auto">
+                    <div class="btn-toggle-nav"></div>
+                    <ul class="navbar nav d-flex">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home
+                            </a>
+                        </li class="nav-item">
+                        <li>
+                            <a class="nav-link" href="store.html">Mobiles</a>
+                        </li class="nav-item">
+                        <li>
+                            <a class="nav-link" href="store.html">PCs</a>
+                        </li class="nav-item">
+                        <li>
+                            <a class="nav-link" href="store.html">Display</a>
+                        </li class="nav-link">
+                        <li>
+                            <a class="nav-link" href="store.html">House Hold</a>
+                        </li class="nav-link">
+                        <li>
+                            <a class="nav-link" href="store.html">Accessories</a>
+                        </li class="nav-link">
+                        <li>
+                            <a class="nav-link" href="orderinfo.html">Your Order</a>
+                        </li class="nav-link">
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="nav-icons-container justify-content-between d-flex">
+                <div class="nav-icons">
+                    <a href="">
+                        <i class="fal fa-search text-clipped"></i>
+                    </a>
+                </div>
+                <div class="nav-icons">
+                    <a href="cart.html">
+                        <i class="fal fa-shopping-bag bag-item-count text-clipped"></i>
+                        <span class="badge">3</span>
+
+                    </a>
+                </div>
+                <div class="nav-icons">
+                    <div class="dropdown ">
+                        <a href="" data-toggle="dropdown">
+                            <i class="fal fa-user text-clipped "></i>
+                        </a>
+                        <div class="dropdown-menu ">
+                            <form action="/loginuser" class="p-2 text-secondary" method='POST'>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" name="email" placeholder="Enter email"
+                                        required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control" name="password"
+                                        placeholder="Enter password" required>
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input id=" dropdown-checkbox">
+                                    <label class="form-check-label" for="dropdown-checkbox">
+                                        Remember me
+                                    </label>
+                                </div>
+                                <button type="submit" class="btn btn-bg my-2">Log in</button>
+                            </form>
+
+
+
+
+                            <div class="dropdown-divider mt-0"> </div>
+                            <a class="dropdown-item" href="./signup">Don't have an account? Sign up</a>
+                            <a class="dropdown-item" href="#">Forget your password? Reset now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="nav-icon d-lg-none">
+
+                    <div class="dropdown ">
+                        <a href="" data-toggle="dropdown">
+                            <i class="fal fa-bars text-clipped "></i>
+                        </a>
+                        <div class="dropdown-menu ">
+                            <a class="dropdown-item" href="index.html">Home</a>
+                            <a class="dropdown-item" href="store.html">Mobile</a>
+                            <a class="dropdown-item" href="store.html">PCs</a>
+                            <a class="dropdown-item" href="store.html">Display</a>
+                            <a class="dropdown-item" href="store.html">House hold</a>
+                            <a class="dropdown-item" href="store.html">Accessories</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- start promotions -->
+        <div class="promotions text-center py-2 mb-5">
+            <span>
+                <span class="text-uppercase font-weight-bold">free shipping</span> on orders of $100 or more
+            </span>
+        </div>
+        <!-- End promotions -->
+
+        <!-- Start carousel -->
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <a href="#">
+                        <img class="d-block w-100 " src="images/carousel/img1.jpg" alt="First slide">
+                    </a>
+                </div>
+                <div class="carousel-item">
+                    <a href="#">
+                        <img class="d-block w-100" src="images/carousel/img2.jpg" alt="Second slide">
+                    </a>
+                </div>
+                <div class="carousel-item">
+                    <a href="#">
+                        <img class="img-fluid w-100" src="images/carousel/img0.jpg" alt="Third slide">
+                    </a>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+
+
+        <!-- End Couresel -->
+    </header>
+
+    <!-- brands -->
+    <section class="featured-brands">
+        <div class="container">
+            <div class="row align-items-center text-center">
+
+                <div class="col-12 col-sm-6 col-md-2 mb-5">
+                    <a href="store.html">
+                        <img src="images/brands/Apple_logo.svg">
+                    </a>
+                </div>
+                <div class="col-12 col-sm-6 col-md-2 mb-5">
+                    <a href="#">
+                        <img src="images/brands/puma.svg">
+                    </a>
+                </div>
+                <div class="col-12 col-sm-6 col-md-2 mb-5">
+                    <a href="#">
+                        <img src="images/brands/sam.svg">
+                    </a>
+                </div>
+                <div class="col-12 col-sm-6 col-md-2 mb-5">
+                    <a href="#">
+                        <img src="images/brands/braun_logo.svg">
+                    </a>
+                </div>
+                <div class="col-12 col-sm-6 col-md-2 mb-5">
+                    <a href="#">
+                        <img src="images/brands/acer-1.svg">
+                    </a>
+                </div>
+                <div class="col-12 col-sm-6 col-md-2 mb-5">
+                    <a href="#">
+                        <img src="images/brands/lg-1.svg">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="new-arrival pt-0 m-auto px-3">
+        <div class="container">
+            <div class="section-heading text-center mb-5">
+                <h1 class="text-clipped text-uppercase">New Arrivals</h1>
+                <p class="text-secondary">Shop the newest trends</p>
+            </div>
+
+            <div class="row">
+                <div class="col-12 col-md-6 hero-img ">
+                    <a href="
+    			#">
+                        <img src="images/hero/hero11.jpg">
+                    </a>
+                    <div mt-2>
+                        <a href="
+    				#">
+                            <span class="text-uppercase font-weight-bold">
+                                Latest Smart Phones
+                            </span><br>
+                            <span>Shop now</span>
+                            <i class="fas fa-caret-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 hero-img ">
+                    <a href="
+    			#">
+                        <img src="images/hero/hero11.jpg">
+                    </a>
+                    <div mt-2>
+                        <a href="
+    				#">
+                            <span class="text-uppercase font-weight-bold">
+                                Latest PCs
+                            </span><br>
+                            <span>Shop now</span>
+                            <i class="fas fa-caret-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 hero-img ">
+                    <a href="
+    			#">
+                        <img src="images/hero/hero11.jpg">
+                    </a>
+                    <div mt-2>
+                        <a href="
+    				#">
+                            <span class="text-uppercase font-weight-bold">
+                                Latest Smart TVs
+                            </span><br>
+                            <span>Shop now</span>
+                            <i class="fas fa-caret-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 hero-img ">
+                    <a href="
+    			#">
+                        <img src="images/hero/hero11.jpg">
+                    </a>
+                    <div mt-2>
+                        <a href="
+    				#">
+                            <span class="text-uppercase font-weight-bold">
+                                Latest Blenders
+                            </span><br>
+                            <span>Shop now</span>
+                            <i class="fas fa-caret-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- End Brands -->
+
+
+    <!-- start-new-arrival -->
+    <section class="arrivals">
+        <div class="container">
+            <div class="section-heading text-center mb-5">
+                <h1 class="text-clipped text-uppercase mb-5">The latest ang greatest tech</h1>
+                <p class="text-secondary"> Shop the newest releases
+                </p>
+            </div>
+            <div class="row text-center">
+                <div class="col-12 col-sm-3 hero-img ">
+
+                    <div class="new-arruval-img mb-3">
+                        <img src="images/shoes/p1.jpg">
+                    </div>
+
+                    <a href="selectedproducts.html">
+                        <span class="text-uppercase font-weight-bold">
+                            note 10
+                        </span><br>
+                        <span>Shop now</span>
+                        <i class="fas fa-caret-right"></i>
+                    </a>
+                </div>
+                <div class="col-12 col-sm-3 hero-img ">
+                    <div class="		new-arruval-img mb-3">
+                        <img src="images/shoes/p2.jpg">
+                    </div>
+
+                    <a href="
+					#">
+                        <span class="text-uppercase font-weight-bold">
+                            note 10
+                        </span><br>
+                        <span>Shop now</span>
+                        <i class="fas fa-caret-right"></i>
+                    </a>
+                </div>
+                <div class="col-12 col-sm-3 hero-img ">
+                    <div class="new-arruval-img mb-3">
+                        <img src="images/shoes/	p3.jpg">
+                    </div>
+
+                    <a href="
+					#">
+                        <span class="text-uppercase font-weight-bold">
+                            note 10
+                        </span><br>
+                        <span>Shop now</span>
+                        <i class="fas fa-caret-right"></i>
+                    </a>
+                </div>
+                <div class="col-12 col-sm-3 hero-img ">
+                    <div class="new-arruval-img mb-3">
+                        <img src="images/shoes/	p4.png">
+                    </div>
+
+                    <a href="
+					#">
+                        <span class="text-uppercase font-weight-bold">
+                            note 10
+                        </span><br>
+                        <span>Shop now</span>
+                        <i class="fas fa-caret-right"></i>
+                    </a>
+                </div>
+                <div class="col-12 col-sm-3 hero-img ">
+                    <div class="		new-arruval-img mb-3">
+                        <img src="images/shoes/	p5.png">
+                    </div>
+
+                    <a href="
+					#">
+                        <span class="text-uppercase font-weight-bold">
+                            note 10
+                        </span><br>
+                        <span>Shop now</span>
+                        <i class="fas fa-caret-right"></i>
+                    </a>
+                </div>
+                <div class="col-12 col-sm-3 hero-img ">
+                    <div class="new-arruval-img mb-3">
+                        <img src="images/shoes/	shoe4.jpg">
+                    </div>
+
+                    <a href="
+					#">
+                        <span class="text-uppercase font-weight-bold">
+                            note 10
+                        </span><br>
+                        <span>Shop now</span>
+                        <i class="fas fa-caret-right"></i>
+                    </a>
+                </div>
+                <div class="col-12 col-sm-3 hero-img ">
+                    <div class="		new-arruval-img mb-3">
+                        <img src="images/shoes/	shoe5.jpg">
+                    </div>
+
+                    <a href="
+					#">
+                        <span class="text-uppercase font-weight-bold">
+                            note 10
+                        </span><br>
+                        <span>Shop now</span>
+                        <i class="fas fa-caret-right"></i>
+                    </a>
+                </div>
+                <div class="col-12 col-sm-3 hero-img ">
+                    <div class="new-arruval-img mb-3">
+                        <img src="images/shoes/	p1.jpg">
+                    </div>
+
+                    <a href="
+					#">
+                        <span class="text-uppercase font-weight-bold">
+                            note 10
+                        </span><br>
+                        <span>Shop now</span>
+                        <i class="fas fa-caret-right"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!--  End new arrivals -->
+
+    <!-- Services -->
+    <section class="our-services">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-12 col-sm-6 col-md-3 mb-5 ">
+                    <div class="our-services-icon d-flex mx-auto mb-3">
+                        <i class="fal fa-shipping-fast text-clipped m-auto"></i>
+                    </div>
+                    <div class="our-services-description">
+                        <h5 class="text-uppercase font-weight-bold">Free Worldwide shipping</h5>
+                        <p>Free shipping for all orders over 100</p>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3 mb-5">
+                    <div class="our-services-icon d-flex mx-auto mb-3">
+                        <i class="fal fa-sync text-clipped d-flex mb-3 m-auto"></i>
+                    </div>
+                    <div class="our-services-description">
+                        <h5 class="text-uppercase font-weight-bold">Monry back guarantee</h5>
+                        <p>We return money with in 30 days</p>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3 mb-5">
+                    <div class="our-services-icon d-flex mx-auto mb-3">
+                        <i class="fal fa-headset text-clipped d-flex mb-3 m-auto"></i>
+                    </div>
+                    <div class="our-services-description ">
+                        <h5 class="text-uppercase font-weight-bold">24/7 customer support</h5>
+                        <p>On demand 24/7 customer support</p>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3 mb-5">
+                    <div class="our-services-icon d-flex mx-auto mb-3">
+                        <i class="fal fa-credit-card text-clipped d-flex mb-3 m-auto"></i>
+                    </div>
+                    <div class="our-services-description">
+                        <h5 class="text-uppercase font-weight-bold">Secure online payment</h5>
+                        <p>we use top of the line data encryption.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- End services -->
+
+    <!-- start footer -->
+    <footer class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-6">
+                    <address>
+                        <strong class="h3 font-weight-normal">
+                            Electrfied Tech
+                        </strong><br>
+                        1234 example street <br>
+                        Karachi, Example 09874
+                        Phone:(021) 344-78546
+                    </address>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="footer-title">
+                        <h5>Our Mission</h5>
+                        <span class="custom-border"></span>
+                    </div>
+                    <ul class="footer-list">
+                        <li>
+                            <a class="footer-list" href="#">lorem</a>
+                        </li>
+                        <li>
+                            <a class="footer-list" href="#">lorem</a>
+                        </li>
+                        <li>
+                            <a class="footer-list" href="#">lorem</a>
+                        </li>
+                        <li>
+                            <a class="footer-list" href="#">lorem</a>
+                        </li>
+                        <li>
+                            <a class="footer-list" href="#">lorem</a>
+                        </li>
+                    </ul>
+
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="footer-title">
+                        <h5>Customer Service</h5>
+                        <span class="custom-border"></span>
+                    </div>
+                    <ul class="footer-list">
+                        <li>
+                            <a class="footer-link" href="#">lorem</a>
+                        </li>
+                        <li>
+                            <a class="footer-link" href="#">lorem</a>
+                        </li>
+                        <li>
+                            <a class="footer-link" href="#">lorem</a>
+                        </li>
+                        <li>
+                            <a class="footer-link" href="#">lorem</a>
+                        </li>
+                        <li>
+                            <a class="footer-link" href="#">lorem</a>
+                        </li>
+                    </ul>
+                </div>
+                <hr class=" line mt-5">
+                <div class="w-100 d-md-flex justify-content-between align-items-center text center text-md-left">
+                    <div class="order-2 ml-3">
+                        <a class="footer-link" href="#">lorem</a>
+                        <a class="footer-link ml-3" href="#">lorem</a>
+                        <a class="footer-link ml-3" href="#">lorem</a>
+                    </div>
+                    <p class="m-0 text-sm order-1">
+                        &copy; 2019 Electrified tech. All rghts reserved.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- End footer -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Bootstrap 4 dependency -->
+    <script src="popper.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+
+    <!-- bootbox code -->
+    <script src="bootbox.min.js"></script>
+    <script src="bootbox.locales.min.js"></script>
+    <script>
+        $(document).on("click", ".show-alert", function (e) {
+            bootbox.alert("Hello world!", function () {
+                console.log("Alert Callback");
+            });
+        });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+    <script>
+        $("#myModal").on("show", function () {    // wire up the OK button to dismiss the modal when shown
+            $("#myModal a.btn").on("click", function (e) {
+                console.log("button pressed");   // just as an example...
+                $("#myModal").modal('hide');     // dismiss the dialog
+            });
+        });
+
+        $("#myModal").on("hide", function () {    // remove the event listeners when the dialog is dismissed
+            $("#myModal a.btn").off("click");
+        });
+
+        $("#myModal").on("hidden", function () {  // remove the actual elements from the DOM when fully hidden
+            $("#myModal").remove();
+        });
+
+        $("#myModal").modal({                    // wire up the actual modal functionality and show the dialog
+            "backdrop": "static",
+            "keyboard": true,
+            "show": true                     // ensure the modal is shown immediately
+        });
+        bootbox.alert(message);
+    </script>
+</body>
+
+</html>

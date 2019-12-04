@@ -1,0 +1,20 @@
+const express = require("express");
+const router = express.Router();
+const AddToCart = require("../controllers/addtocart");
+const Purchase = require("../controllers/purchase");
+const InsertIntoCart = require("../controllers/cart");
+const Cart = require("../controllers/cart");
+const CartDisplay = require("../controllers/cartdisplay");
+const RemoveItem = require("../controllers/removefromcart");
+const InsertBillInfo = require("../controllers/insertbillinfo");
+const ViewBillInfo = require("../controllers/viewbillinfo");
+
+router.get("/store", AddToCart);
+router.get("/purchase", Purchase);
+router.get("/cart/:id/", InsertIntoCart);
+router.get("/removeitem/:id/:quantity", RemoveItem);
+router.post("/insertcart", Cart);
+router.get("/cartdisplay", CartDisplay);
+router.get("/submitbillinfo", ViewBillInfo);
+router.post("/submitbillinfo", InsertBillInfo);
+module.exports = router;

@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Electrified</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link rel="stylesheet" href="main.css">
+</head>
+<!-- <link rel="stylesheet" href="styles.css" /> -->
+<script src="store.js" async></script>
+
+<body>
+    <header>
+        <div class="custom-nav-container d-flex align-items-center justify-content-between px-2 py-1 shadow-sm">
+            <a class="text-clipped navbar-brand" href="index.html">
+                <i class="fal fa-bolt d-flex">
+                    <span class="m-auto"> Electrified</span>
+                </i>
+
+            </a>
+            <div class="main-nav-outer d-flex">
+                <i class="fal fa-times text-clipped menu-close-icon d-lg-none"></i>
+                <nav class="nav-main navbar navbar-light navbar-expand-lg text-center m-auto">
+                    <div class="btn-toggle-nav"></div>
+                    <ul class="navbar nav d-flex">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/home">Home
+                            </a>
+                        </li class="nav-item">
+                        <li>
+                            <a class="nav-link" href="/mobile">Mobiles</a>
+                        </li class="nav-item">
+                        <li>
+                            <a class="nav-link" href="/pc">PCs</a>
+                        </li class="nav-item">
+                        <li>
+                            <a class="nav-link" href="/display">Display</a>
+                        </li class="nav-link">
+                        <li>
+                            <a class="nav-link" href="/household">House Hold</a>
+                        </li class="nav-link">
+                        <li>
+                            <a class="nav-link" href="/accessories">Accessories</a>
+                        </li class="nav-link">
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="nav-icons-container justify-content-between d-flex">
+                <div class="nav-icons">
+                    <div class="dropdown ">
+                        <a href="" data-toggle="dropdown">
+                            <i class="fal fa-search text-clipped "></i>
+                        </a>
+                        <div class="dropdown-menu show" x-placement="bottom-start"
+                            style="position: absolute;will-change: transform;padding-bottom: 0px;padding-top: 0px;top: 0px;left: 0px;transform: translate3d(50px, -56px, 0px);">
+                            <div class="search-container">
+                                <form action="/action_page.php" ;">
+                                    <input type="text" placeholder="Search.." name="search" style="
+    border-top-width: 00px;
+    border-bottom-width: 0px;
+    border-right-width: 0px;
+    border-left-width: 0px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    ">
+                                    <button class="btn btn-bg my-2 type=" submit"="">Go</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="nav-icons">
+                    <a href="/cart">
+                        <i class="fal fa-shopping-bag bag-item-count text-clipped" style="margin-left: 20px;"></i>
+                        <span class="badge">3</span>
+
+                    </a>
+                </div>
+                <div class="nav-icons">
+                    <div class="dropdown d-inline-block">
+                        <a href="#" class="icontext mr-4 dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                            <img class="icon icon-sm rounded-circle" src="images/person-solid.png"
+                                style="width: 27%;height: 20%; size: 0.2rem; margin-left: 20px;">
+                        </a> <!-- iconbox // -->
+                        <div class="dropdown-menu dropdown-menu-right m-0 mt-4" x-placement="bottom-end"
+                            style="position: absolute; will-change: transform; top: 0px; left: 20px; transform: translate3d(0px, 32px, 0px);">
+                            <a class="dropdown-item" href="./profile">My profile</a>
+                            <a class="dropdown-item" href="#">Settings</a>
+                            <a class="dropdown-item" href="/logout">Log out</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="nav-icon d-lg-none">
+
+                    <div class="dropdown ">
+                        <a href="" data-toggle="dropdown">
+                            <i class="fal fa-bars text-clipped "></i>
+                        </a>
+                        <div class="dropdown-menu ">
+                            <a class="dropdown-item" href="/home">Home</a>
+                            <a class="dropdown-item" href="/mobile">Mobile</a>
+                            <a class="dropdown-item" href="/pc">PCs</a>
+                            <a class="dropdown-item" href="/display">Display</a>
+                            <a class="dropdown-item" href="/household">House hold</a>
+                            <a class="dropdown-item" href="/accessories">Accessories</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- start promotions -->
+        <div class="promotions text-center py-2 mb-5">
+            <span>
+                <span class="text-uppercase font-weight-bold">Free Shipping</span> on orders of Rs.10000 or more
+            </span>
+        </div>
+        <!-- End promotions -->
+        <!--start search-->
+        <div class="container">
+            <div class="row searchFilter">
+                <div class="col-sm-12">
+                    <div class="input-group">
+                        <input id="table_filter" type="text" class="form-control"
+                            aria-label="Text input with segmented button dropdown">
+                        <div class="input-group-btn">
+                            <button type="button" class="btn btn-bg dropdown-toggle dropdown-toggle-split"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span
+                                    class="label-icon">Category</span> <span class="caret">&nbsp;</span></button>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <ul class="category_filters">
+                                    <li>
+                                        <input class="cat_type category-input" data-label="All" id="all" value=""
+                                            name="radios" type="radio"><label for="all">All</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="radios" id="Design" value="Design"><label
+                                            class="category-label" for="Design">Design</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="radios" id="Marketing" value="Marketing"><label
+                                            class="category-label" for="Marketing">Marketing</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="radios" id="Programming" value="Programming"><label
+                                            class="category-label" for="Programming">Programming</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="radios" id="Sales" value="Sales"><label
+                                            class="category-label" for="Sales">Sales</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="radios" id="Support" value="Support"><label
+                                            class="category-label" for="Support">Support</label>
+                                    </li>
+                                </ul>
+                            </div>
+                            <button id="searchBtn" type="button" class="btn btn-bg  btn-search"><span
+                                    class="glyphicon glyphicon-search">&nbsp;</span> <span
+                                    class="label-icon">Search</span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--search end-->
+        <!-- start store -->
+
+        <section class="container content-section">
+            <h2 class="text-clipped text-center">HOUSEHOLD APPLIANCES</h2>
+            <div class="shop-items">
+                <% result.forEach(function(result){ %>
+                <div class="shop-item" data-item-id="<%= result.id %>">
+                    <span class="shop-item-title"><%=result.name%></span>
+                    <img class="shop-item-image" src="<%= result.imagesrc %>" style="width: 300px;">
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">$<%= result.price%></span>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                    </div>
+                </div>
+                <% }) %>
+            </div>
+        </section>
+
+
+        <!-- end store== -->
+
+        <!-- start footer -->
+        <footer class="py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-lg-6">
+                        <address>
+                            <strong class="h3 font-weight-normal">
+                                Electrfied Tech
+                            </strong><br>
+                            1234 example street <br>
+                            Karachi, Example 09874
+                            Phone:(021) 344-78546
+                        </address>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="footer-title">
+                            <h5>Our Mission</h5>
+                            <span class="custom-border"></span>
+                        </div>
+                        <ul class="footer-list">
+                            <li>
+                                <a class="footer-list" href="#">lorem</a>
+                            </li>
+                            <li>
+                                <a class="footer-list" href="#">lorem</a>
+                            </li>
+                            <li>
+                                <a class="footer-list" href="#">lorem</a>
+                            </li>
+                            <li>
+                                <a class="footer-list" href="#">lorem</a>
+                            </li>
+                            <li>
+                                <a class="footer-list" href="#">lorem</a>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="footer-title">
+                            <h5>Customer Service</h5>
+                            <span class="custom-border"></span>
+                        </div>
+                        <ul class="footer-list">
+                            <li>
+                                <a class="footer-link" href="#">lorem</a>
+                            </li>
+                            <li>
+                                <a class="footer-link" href="#">lorem</a>
+                            </li>
+                            <li>
+                                <a class="footer-link" href="#">lorem</a>
+                            </li>
+                            <li>
+                                <a class="footer-link" href="#">lorem</a>
+                            </li>
+                            <li>
+                                <a class="footer-link" href="#">lorem</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <hr class=" line mt-5">
+                    <div class="w-100 d-md-flex justify-content-between align-items-center text center text-md-left">
+                        <div class="order-2 ml-3">
+                            <a class="footer-link" href="#">lorem</a>
+                            <a class="footer-link ml-3" href="#">lorem</a>
+                            <a class="footer-link ml-3" href="#">lorem</a>
+                        </div>
+                        <p class="m-0 text-sm order-1">
+                            &copy; 2019 Electrified tech. All rghts reserved.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- End footer -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+        <script src="main.js"></script>
+</body>
+
+</html>
