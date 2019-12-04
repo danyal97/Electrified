@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Electrified</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link rel="stylesheet" href="main.css">
+</head>
+<!-- <link rel="stylesheet" href="styles.css" /> -->
+<script src="store.js" async></script>
+
+<body>
+    <header>
+        <div class="custom-nav-container d-flex align-items-center justify-content-between px-2 py-1 shadow-sm">
+            <a class="text-clipped navbar-brand" href="/home">
+                <i class="fal fa-bolt d-flex">
+                    <span class="m-auto"> Electrified</span>
+                </i>
+
+            </a>
+            <div class="main-nav-outer d-flex">
+                <i class="fal fa-times text-clipped menu-close-icon d-lg-none"></i>
+                <nav class="nav-main navbar navbar-light navbar-expand-lg text-center m-auto">
+                    <div class="btn-toggle-nav"></div>
+                    <ul class="navbar nav d-flex">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/home">Home
+                            </a>
+                        </li class="nav-item">
+                        <li>
+                            <a class="nav-link" href="/mobile">Mobiles</a>
+                        </li class="nav-item">
+                        <li>
+                            <a class="nav-link" href="/pc">PCs</a>
+                        </li class="nav-item">
+                        <li>
+                            <a class="nav-link" href="/display">Display</a>
+                        </li class="nav-link">
+                        <li>
+                            <a class="nav-link" href="/household">House Hold</a>
+                        </li class="nav-link">
+                        <li>
+                            <a class="nav-link" href="/accessories">Accessories</a>
+                        </li class="nav-link">
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="nav-icons-container justify-content-between d-flex">
+                <div class="nav-icons">
+                    <a href="">
+                        <i class="fal fa-search text-clipped"></i>
+                    </a>
+                </div>
+                <div class="nav-icons">
+                    <a href="/cart">
+                        <i class="fal fa-shopping-bag bag-item-count text-clipped"></i>
+                        <span class="badge">3</span>
+
+                    </a>
+                </div>
+                <div class="nav-icons">
+                    <div class="dropdown ">
+                        <a href="" data-toggle="dropdown">
+                            <i class="fal fa-user text-clipped "></i>
+                        </a>
+                        <div class="dropdown-menu ">
+                            <form action="/login" class="p-2 text-secondary">
+                                <div class="form-group">
+                                    <input type="email" name="form-control" placeholder="Enter email" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" name="form-control" placeholder="Enter password" required>
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input id=" dropdown-checkbox">
+                                    <label class="form-check-label" for="dropdown-checkbox">
+                                        Remember me
+                                    </label>
+                                </div>
+                                <button type="submit" class="btn btn-bg my-2">Log in</button>
+                            </form>
+                            <div class="dropdown-divider mt-0"> </div>
+                            <a class="dropdown-item" href="./register">Don't have an account? Sign up</a>
+                            <a class="dropdown-item" href="#">Forget your password? Reset now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="nav-icon d-lg-none">
+
+                    <div class="dropdown ">
+                        <a href="" data-toggle="dropdown">
+                            <i class="fal fa-bars text-clipped "></i>
+                        </a>
+                        <div class="dropdown-menu ">
+                            <a class="dropdown-item" href="/home">Home</a>
+                            <a class="dropdown-item" href="/mobile">Mobile</a>
+                            <a class="dropdown-item" href="/pc">PCs</a>
+                            <a class="dropdown-item" href="/display">Display</a>
+                            <a class="dropdown-item" href="/household">House hold</a>
+                            <a class="dropdown-item" href="/accessories">Accessories</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- start promotions -->
+        <div class="promotions text-center py-2 mb-5">
+            <span>
+                <span class="text-uppercase font-weight-bold">Free Shipping</span> on orders of Rs.10000 or more
+            </span>
+        </div>
+        <!-- End promotions -->
+        <!-- start store -->
+
+        <section class="container content-section">
+            <h2 class="text-clipped text-center">LAPTOPS and PCs</h2>
+            <div class="shop-items" style="margin-left: 30px; margin-right: 30px;">
+                <% result.forEach(function(result){ %>
+                <div class="shop-item" data-item-id="<%= result.id %>">
+                    <span class="shop-item-title"><%=result.name%></span>
+                    <img class="shop-item-image" src="<%= result.imagesrc %>" style="width: 300px;">
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">
+                            <h5>$<%= result.price%></h5>
+                        </span>
+                    </div>
+                </div>
+                <% }) %>
+            </div>
+
+            <div class="row">
+
+                <div class="col-sm-5 text-center">
+                    <medium class="text-muted inline m-t-sm m-b-sm">showing 10-20 of 50 items
+                    </medium>
+                </div>
+                <div class="col-sm-7 text-right text-center-xs">
+                    <ul class="pagination" style="float: right;">
+                        <li><a href=""><i class="fa fa-chevron-left"></i></a></li>
+                        <li><a href="/pc?page=1&limit=4">1</a></li>
+                        <li><a href="/pc?page=2&limit=4">2</a></li>
+                        <li><a href="/pc?page=2&limit=4">3</a></li>
+                        <li><a href="/pc?page=4&limit=4">4</a></li>
+                        <li><a href=""><i class="fa fa-chevron-right"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- end store== -->
+
+        <!-- start footer -->
+        <footer class="py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-lg-6">
+                        <address>
+                            <strong class="h3 font-weight-normal">
+                                Electrfied Tech
+                            </strong><br>
+                            1234 example street <br>
+                            Karachi, Example 09874
+                            Phone:(021) 344-78546
+                        </address>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="footer-title">
+                            <h5>Our Mission</h5>
+                            <span class="custom-border"></span>
+                        </div>
+                        <ul class="footer-list">
+                            <li>
+                                <a class="footer-list" href="#">lorem</a>
+                            </li>
+                            <li>
+                                <a class="footer-list" href="#">lorem</a>
+                            </li>
+                            <li>
+                                <a class="footer-list" href="#">lorem</a>
+                            </li>
+                            <li>
+                                <a class="footer-list" href="#">lorem</a>
+                            </li>
+                            <li>
+                                <a class="footer-list" href="#">lorem</a>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="footer-title">
+                            <h5>Customer Service</h5>
+                            <span class="custom-border"></span>
+                        </div>
+                        <ul class="footer-list">
+                            <li>
+                                <a class="footer-link" href="#">lorem</a>
+                            </li>
+                            <li>
+                                <a class="footer-link" href="#">lorem</a>
+                            </li>
+                            <li>
+                                <a class="footer-link" href="#">lorem</a>
+                            </li>
+                            <li>
+                                <a class="footer-link" href="#">lorem</a>
+                            </li>
+                            <li>
+                                <a class="footer-link" href="#">lorem</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <hr class=" line mt-5">
+                    <div class="w-100 d-md-flex justify-content-between align-items-center text center text-md-left">
+                        <div class="order-2 ml-3">
+                            <a class="footer-link" href="#">lorem</a>
+                            <a class="footer-link ml-3" href="#">lorem</a>
+                            <a class="footer-link ml-3" href="#">lorem</a>
+                        </div>
+                        <p class="m-0 text-sm order-1">
+                            &copy; 2019 Electrified tech. All rghts reserved.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- End footer -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+        <script src="main.js"></script>
+</body>
+
+</html>

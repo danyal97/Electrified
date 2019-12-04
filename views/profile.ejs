@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Electrified</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link rel="stylesheet" href="main.css">
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
+	<link href="fonts/fontawesome/css/all.min.css" type="text/css" rel="stylesheet">
+	<link href="css/ui.css" rel="stylesheet" type="text/css"/>
+	<link href="css/responsive.css" rel="stylesheet" />
+	<script src="js/jquery-2.0.0.min.js" type="text/javascript"></script>
+	<script src="js/bootstrap.bundle.min.js" type="text/javascript"></script>
+	<script src="js/script.js" type="text/javascript"></script>
+</head>
+<body>
+    <header>
+		<% if (email) { %>
+		<div id="myModal" class="modal fade">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<!-- dialog body -->
+					<div class="modal-body">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<%=message%>
+					</div>
+				</div>
+			</div>
+		</div>
+		<% } %>
+		
+		<% if (phone) { %>
+		<div id="myModal" class="modal fade">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<!-- dialog body -->
+					<div class="modal-body">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<%=message%>
+					</div>
+				</div>
+			</div>
+		</div>
+		<% } %>
+    	<div class="custom-nav-container d-flex align-items-center justify-content-between px-2 py-1 shadow-sm">
+    		<a class="text-clipped navbar-brand" href="#">
+    			<i class="fal fa-bolt d-flex">
+    				<span class="m-auto"> Electrified</span>
+    			</i>
+    			
+    		</a>
+    		<div class="main-nav-outer d-flex"> 
+    			<i class="fal fa-times text-clipped menu-close-icon d-lg-none"></i>
+    			<nav class="nav-main navbar navbar-light navbar-expand-lg text-center m-auto">
+    				<div class="btn-toggle-nav"></div>
+    				<ul class="navbar nav d-flex">
+    					<li class="nav-item">
+    						<a class="nav-link" href="#">Home
+    						</a>
+    					</li class="nav-item">
+    					<li>
+    						<a class="nav-link" href="#">Mobiles</a>
+    					</li class="nav-item">
+    					<li>
+    					 	<a class="nav-link" href="#">PCs</a>
+    					</li class="nav-item">
+    					<li>
+    						<a class="nav-link" href="#">Display</a>
+    					</li class="nav-link">
+    					<li>
+    						<a class="nav-link" href="#">House Hold</a>
+    					</li class="nav-link">
+    					<li>
+    						<a class="nav-link" href="#">Accessories</a>
+    					</li class="nav-link">
+    				</ul> 
+    			</nav>
+    		</div>
+    	
+	    	<div class="nav-icons-container justify-content-between d-flex">
+	    		<div class="nav-icons" style="margin-right: 13%;">
+	    			<a href="">
+	    				<i class="fal fa-search text-clipped"></i>
+	    			</a>
+	    		</div>
+	    		<div class="nav-icons">
+	    			<a href="">
+	    				<i class="fal fa-shopping-bag bag-item-count text-clipped"></i>
+	    					<span class="badge">3</span>
+	    				
+	    			</a>
+	    		</div>	
+				<div class="nav-icons">
+					<div class="dropdown d-inline-block">
+						<a href="#" class="icontext mr-4 dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+							<img class="icon icon-sm rounded-circle" src="images/person-solid.png"
+								style="width: 27%;height: 20%; size: 0.2rem; margin-left: 20px;">
+						</a> <!-- iconbox // -->
+						<div class="dropdown-menu dropdown-menu-right m-0 mt-4" x-placement="bottom-end"
+							style="position: absolute; will-change: transform; top: 0px; left: 20px; transform: translate3d(0px, 32px, 0px);">
+							<a class="dropdown-item" href="./profile">My profile</a>
+							<a class="dropdown-item" href="#">Settings</a>
+							<a class="dropdown-item" href="/logout">Log out</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="nav-icon d-lg-none">
+					
+				<div class="dropdown ">
+	    			 	<a  href="" data-toggle="dropdown">
+							<i class="fal fa-bars text-clipped "></i>
+						</a>
+						<div class="dropdown-menu ">
+							<a class="dropdown-item" href="#">Home</a>
+							<a class="dropdown-item" href="#">Mobile</a>
+							<a class="dropdown-item" href="#">PCs</a>
+							<a class="dropdown-item" href="#">Display</a>
+							<a class="dropdown-item" href="#">House hold</a>
+							<a class="dropdown-item" href="#">Accessories</a>
+						</div>
+				</div>
+	    		</div>
+	    	</div>
+		</div>
+		<!-- start promotions -->
+		<div class="promotions text-center py-2 mb-5">
+			<span>
+				<span class="text-uppercase font-weight-bold">free shipping</span> on orders of $100 or more
+			</span>
+		</div>	
+		<!-- End promotions -->
+	    
+
+    <section class="My-Profile pt-0 m-auto px-3">
+    	<div class="container">
+    		<div class="section-heading text-center mb-5">
+    			<h1 class="text-clipped text-uppercase">My Profile</h1>
+    		</div>
+    		<div class="card">
+      <div class="card-body p-0">
+	  
+		<% if (profile) { %>
+      <div class="col-md-12">
+
+<div class="col-6" style="float: left; width: 35%">
+	<img src="./images/avatar1.jpg" class="img-sm rounded-circle border" style="margin-top: 20%;">
+</div>
+<div class="col-6" style="float: left;max-width: 64%!important;">
+<form style="margin-left: 0%; margin-bottom: 5%; margin-top: 5%;" action="/UpdateProfile" method="POST" >
+	<div class="form-group">
+		<label for="inputfullname">Full Name</label>
+		<input type="text" class="form-control" id="inputfullname" name="fullname" required value=<%=fullname%>>
+	</div>
+	<div class="form-row">
+		<div class="form-group col-md-12">
+			<label for="inputEmail4">Email</label>
+			<input type="email" class="form-control" id="inputEmail4" name="email" required value=<%=email%>>
+		</div>
+		<!-- <div class="form-group col-md-6">
+			<label for="inputPassword4">Password</label>
+			<input type="password" class="form-control" id="inputPassword4" name="password" required
+				value=<%=password%>>
+		</div> -->
+	</div>
+	<div class="form-group">
+		<label for="address">Address</label>
+		<textarea class="form-control" id="address" rows="3" name="address"><%=address%></textarea>
+	</div>
+	<div class="form-row">
+		<div class="form-group col-md-9">
+			<label for="phonenumber">Phone Number</label>
+			<input type="tel" class="form-control" id="phonenumber" pattern="^\d{11}$" name="phone"
+				title="Please enter 11 digit number" required value=<%=phone%>>
+		</div>
+		<div class="form-group col-md-3">
+			<label for="inputGender">Gender</label>
+			<select id="inputGender" class="form-control" name="gender">
+				<option>M</option>
+				<option>F</option>
+			</select>
+		</div>
+	</div>
+	<!-- <div class="form-group m-2 mb-3">
+		                        <div class="form-check">
+		                            <input class="form-check-input" type="checkbox" id="gridCheck">
+		                            <label class="form-check-label" for="gridCheck" style="color: grey;">
+		                                I want to receive exclusive offers and promotions from Electrified.
+		                            </label>
+		                        </div>
+		                    </div> -->
+<button type="submit" class="btn  btn-lg btn-block btn-primary " style="margin-bottom: 2%;margin-top: 2%;">
+	<span style="color:white;">Save</span>
+</button>
+</form>
+
+</div>
+	  </div>
+
+
+
+		
+		<% } %>
+
+
+     
+      </div> <!-- card-body.// -->
+    </div> <!-- card .// -->
+		</div>
+	</section>
+
+<!-- start footer -->
+<footer class="py-5">
+	<div class="container">
+		<div class="row">
+			<div class="col-12 col-lg-6">
+				<address>
+					<strong class="h3 font-weight-normal">
+						Electrfied Tech
+					</strong><br>
+					1234 example street <br>
+					Karachi, Example 09874
+					Phone:(021) 344-78546
+				</address>
+			</div>
+			<div class="col-12 col-sm-6 col-lg-3">
+				<div class="footer-title">
+					<h5>Our Mission</h5>
+					<span class="custom-border"></span>
+				</div>
+				<ul class="footer-list">
+					<li>
+						<a class="footer-list" href="#">lorem</a>
+					</li>
+					<li>
+						<a class="footer-list" href="#">lorem</a>
+					</li>
+					<li>
+						<a class="footer-list" href="#">lorem</a>
+					</li>
+					<li>
+						<a class="footer-list" href="#">lorem</a>
+					</li>
+					<li>
+						<a class="footer-list" href="#">lorem</a>
+					</li>
+				</ul>
+				
+			</div>
+			<div class="col-12 col-sm-6 col-lg-3">
+				<div class="footer-title">
+					<h5>Customer Service</h5>
+					<span class="custom-border"></span>
+				</div>
+				<ul class="footer-list">
+					<li>
+						<a class="footer-link" href="#">lorem</a>
+					</li>
+					<li>
+						<a class="footer-link" href="#">lorem</a>
+					</li>
+					<li>
+						<a class="footer-link" href="#">lorem</a>
+					</li>
+					<li>
+						<a class="footer-link" href="#">lorem</a>
+					</li>
+					<li>
+						<a class="footer-link" href="#">lorem</a>
+					</li>
+				</ul>
+			</div>
+			<hr class=" line mt-5">
+			<div class="w-100 d-md-flex justify-content-between align-items-center text center text-md-left">
+				<div class="order-2 ml-3">
+					<a class="footer-link" href="#">lorem</a>
+					<a class="footer-link ml-3" href="#">lorem</a>
+					<a class="footer-link ml-3" href="#">lorem</a>
+				</div>
+				<p class="m-0 text-sm order-1">
+					&copy; 2019 Electrified tech. All rghts reserved.
+				</p>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<!-- End footer -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="main.js"></script>
+</body>
+</html>

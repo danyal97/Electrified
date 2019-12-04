@@ -1,0 +1,564 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Electrified</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/5.3.3/bootbox.min.js">
+</head>
+
+<body>
+
+    <header>
+
+
+
+        <div class="custom-nav-container d-flex align-items-center justify-content-between px-2 py-1 shadow-sm">
+            <a class="text-clipped navbar-brand" href="index.html">
+                <i class="fal fa-bolt d-flex">
+                    <span class="m-auto"> Electrified</span>
+                </i>
+
+            </a>
+            <div class="main-nav-outer d-flex">
+                <i class="fal fa-times text-clipped menu-close-icon d-lg-none"></i>
+                <nav class="nav-main navbar navbar-light navbar-expand-lg text-center m-auto">
+                    <div class="btn-toggle-nav"></div>
+                    <ul class="navbar nav d-flex">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/home">Home
+                            </a>
+                        </li class="nav-item">
+                        <li>
+                            <a class="nav-link" href="/mobile">Mobiles</a>
+                        </li class="nav-item">
+                        <li>
+                            <a class="nav-link" href="/pc">PCs</a>
+                        </li class="nav-item">
+                        <li>
+                            <a class="nav-link" href="/display">Display</a>
+                        </li class="nav-link">
+                        <li>
+                            <a class="nav-link" href="/household">House Hold</a>
+                        </li class="nav-link">
+                        <li>
+                            <a class="nav-link" href="/accessories">Accessories</a>
+                        </li class="nav-link">
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="nav-icons-container justify-content-between d-flex">
+                <div class="nav-icons">
+                    <div class="dropdown ">
+                        <a href="" data-toggle="dropdown">
+                            <i class="fal fa-search text-clipped "></i>
+                        </a>
+                        <div class="dropdown-menu show" x-placement="bottom-start"
+                            style="position: absolute;will-change: transform;padding-bottom: 0px;padding-top: 0px;top: 0px;left: 0px;transform: translate3d(50px, -56px, 0px);">
+                            <div class="search-container">
+                                <form action="/search" ;">
+                                    <input type="text" placeholder="Search.." name="search" style="
+border-top-width: 00px;
+border-bottom-width: 0px;
+border-right-width: 0px;
+border-left-width: 0px;
+padding-left: 5px;
+">
+                                    <button class="btn btn-bg my-2 type=" submit"="">Go</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="nav-icons">
+                    <a href="/cartdisplay">
+                        <i class="fal fa-shopping-bag bag-item-count text-clipped" style="margin-left: 20px;"></i>
+                        <span class="badge">3</span>
+
+                    </a>
+                </div>
+                <div class="nav-icons">
+                    <div class="dropdown d-inline-block">
+                        <a href="#" class="icontext mr-4 dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                            <img class="icon icon-sm rounded-circle" src="images/person-solid.png"
+                                style="width: 27%;height: 20%; size: 0.2rem; margin-left: 20px;">
+                        </a> <!-- iconbox // -->
+                        <div class="dropdown-menu dropdown-menu-right m-0 mt-4" x-placement="bottom-end"
+                            style="position: absolute; will-change: transform; top: 0px; left: 20px; transform: translate3d(0px, 32px, 0px);">
+                            <a class="dropdown-item" href="./profile">My profile</a>
+                            <a class="dropdown-item" href="#">Settings</a>
+                            <a class="dropdown-item" href="/logout">Log out</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="nav-icon d-lg-none">
+
+                    <div class="dropdown ">
+                        <a href="" data-toggle="dropdown">
+                            <i class="fal fa-bars text-clipped "></i>
+                        </a>
+                        <div class="dropdown-menu ">
+                            <a class="dropdown-item" href="/home">Home</a>
+                            <a class="dropdown-item" href="/mobile">Mobile</a>
+                            <a class="dropdown-item" href="/pc">PCs</a>
+                            <a class="dropdown-item" href="/display">Display</a>
+                            <a class="dropdown-item" href="/household">House hold</a>
+                            <a class="dropdown-item" href="/accessories">Accessories</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- start promotions -->
+        <div class="promotions text-center py-2 mb-5">
+            <span>
+                <span class="text-uppercase font-weight-bold">free shipping</span> on orders of Rs.10000 or more
+            </span>
+        </div>
+        <!-- End promotions -->
+
+        <!-- Start carousel -->
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <a href="#">
+                        <img class="d-block w-100 " src="images/carousel/img1.jpg" alt="First slide">
+                    </a>
+                </div>
+                <div class="carousel-item">
+                    <a href="#">
+                        <img class="d-block w-100" src="images/carousel/img2.jpg" alt="Second slide">
+                    </a>
+                </div>
+                <div class="carousel-item">
+                    <a href="#">
+                        <img class="img-fluid w-100" src="images/carousel/img0.jpg" alt="Third slide">
+                    </a>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+
+
+        <!-- End Couresel -->
+    </header>
+
+    <!-- brands -->
+    <section class="featured-brands">
+        <div class="container">
+            <div class="row align-items-center text-center">
+    
+                <div class="col-12 col-sm-6 col-md-2 mb-5">
+                    <a href="/search?search=iphone">
+                        <img src="images/brands/Apple_logo.svg">
+                    </a>
+                </div>
+                <div class="col-12 col-sm-6 col-md-2 mb-5">
+                    <a href="/search?search=dell">
+                        <img src="images/brands/dell.jpg">
+                    </a>
+                </div>
+                <div class="col-12 col-sm-6 col-md-2 mb-5">
+                    <a href="/search?search=samsung">
+                        <img src="images/brands/sam.svg">
+                    </a>
+                </div>
+                <div class="col-12 col-sm-6 col-md-2 mb-5">
+                    <a href="/search?search=nvidia">
+                        <img src="images/brands/nvidia.png">
+                    </a>
+                </div>
+                <div class="col-12 col-sm-6 col-md-2 mb-5">
+                    <a href="/search?search=acer">
+                        <img src="images/brands/acer-1.svg">
+                    </a>
+                </div>
+                <div class="col-12 col-sm-6 col-md-2 mb-5">
+                    <a href="/search?search=lg">
+                        <img src="images/brands/lg-1.svg">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="new-arrival pt-0 m-auto px-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-6 hero-img ">
+                    <a href="/mobile">
+                        <img src="images/NewArrival/iphone.jpg">
+                    </a>
+                    <div mt-2>
+                        <a href="/mobile">
+                            <span class="text-uppercase font-weight-bold">
+                                Latest Smart Phones
+                            </span><br>
+                            <span>Shop now</span>
+                            <i class="fas fa-caret-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 hero-img ">
+                    <a href="/pc">
+                        <img src="images/NewArrival/laptop2.jpg">
+                    </a>
+                    <div mt-2>
+                        <a href="/pc">
+                            <span class="text-uppercase font-weight-bold">
+                                Latest Laptops
+                            </span><br>
+                            <span>Shop now</span>
+                            <i class="fas fa-caret-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 hero-img ">
+                    <a href="/display">
+                        <img src="images/NewArrival/TV.jpg">
+                    </a>
+                    <div mt-2>
+                        <a href="/display">
+                            <span class="text-uppercase font-weight-bold">
+                                Latest Smart TVs
+                            </span><br>
+                            <span>Shop now</span>
+                            <i class="fas fa-caret-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 hero-img ">
+                    <a href="/household">
+                        <img src="images/NewArrival/homeapp.jpg">
+                    </a>
+                    <div mt-2>
+                        <a href="/household">
+                            <span class="text-uppercase font-weight-bold">
+                                Latest Home Appliances
+                            </span><br>
+                            <span>Shop now</span>
+                            <i class="fas fa-caret-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- End Brands -->
+
+
+    <!-- start-new-arrival -->
+    <section class="arrivals">
+        <div class="container">
+            <div class="section-heading text-center mb-5">
+                <h1 class="text-clipped text-uppercase mb-5">The latest and greatest tech</h1>
+                <p class="text-secondary"> Shop the newest releases
+                </p>
+            </div>
+            <div class="row text-center">
+                <div class="col-12 col-sm-3 hero-img ">
+
+                    <div class="new-arruval-img mb-3">
+                        <img src="images/newitem/phone1.jpg">
+                    </div>
+
+                    <a href="/mobile">
+                        <span class="text-uppercase font-weight-bold">
+                            Mobile Phones
+                        </span><br>
+                        <span>Shop now</span>
+                        <i class="fas fa-caret-right"></i>
+                    </a>
+                </div>
+                <div class="col-12 col-sm-3 hero-img ">
+                    <div class="		new-arruval-img mb-3">
+                        <img src="images/newitem/ac1.jpg">
+                    </div>
+
+                    <a href="/household">
+                        <span class="text-uppercase font-weight-bold">
+                            Air Conditioners
+                        </span><br>
+                        <span>Shop now</span>
+                        <i class="fas fa-caret-right"></i>
+                    </a>
+                </div>
+                <div class="col-12 col-sm-3 hero-img ">
+                    <div class="new-arruval-img mb-3">
+                        <img src="images/newitem/led1.jpg">
+                    </div>
+
+                    <a href="/display">
+                        <span class="text-uppercase font-weight-bold">
+                            LEDs
+                        </span><br>
+                        <span>Shop now</span>
+                        <i class="fas fa-caret-right"></i>
+                    </a>
+                </div>
+                <div class="col-12 col-sm-3 hero-img ">
+                    <div class="new-arruval-img mb-3">
+                        <img src="images/newitem/gc1.jpg">
+                    </div>
+
+                    <a href="/accessories">
+                        <span class="text-uppercase font-weight-bold">
+                            Graphics Cards
+                        </span><br>
+                        <span>Shop now</span>
+                        <i class="fas fa-caret-right"></i>
+                    </a>
+                </div>
+                <div class="col-12 col-sm-3 hero-img ">
+                    <div class="		new-arruval-img mb-3">
+                        <img src="images/newitem/laptop1.jpg">
+                    </div>
+
+                    <a href="/pc">
+                        <span class="text-uppercase font-weight-bold">
+                            Laptops
+                        </span><br>
+                        <span>Shop now</span>
+                        <i class="fas fa-caret-right"></i>
+                    </a>
+                </div>
+                <div class="col-12 col-sm-3 hero-img ">
+                    <div class="new-arruval-img mb-3">
+                        <img src="images/newitem/pc1.jpg">
+                    </div>
+
+                    <a href="/pc">
+                        <span class="text-uppercase font-weight-bold">
+                            PCs
+                        </span><br>
+                        <span>Shop now</span>
+                        <i class="fas fa-caret-right"></i>
+                    </a>
+                </div>
+                <div class="col-12 col-sm-3 hero-img ">
+                    <div class="		new-arruval-img mb-3">
+                        <img src="images/newitem/fridge1.jpg">
+                    </div>
+
+                    <a href="/household">
+                        <span class="text-uppercase font-weight-bold">
+                            Refridgerators
+                        </span><br>
+                        <span>Shop now</span>
+                        <i class="fas fa-caret-right"></i>
+                    </a>
+                </div>
+                <div class="col-12 col-sm-3 hero-img ">
+                    <div class="new-arruval-img mb-3">
+                        <img src="images/newitem/kitapp1.jpg">
+                    </div>
+
+                    <a href="/household">
+                        <span class="text-uppercase font-weight-bold">
+                            Kitchen Appliances
+                        </span><br>
+                        <span>Shop now</span>
+                        <i class="fas fa-caret-right"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!--  End new arrivals -->
+
+    <!-- Services -->
+    <section class="our-services">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-12 col-sm-6 col-md-3 mb-5 ">
+                    <div class="our-services-icon d-flex mx-auto mb-3">
+                        <i class="fal fa-shipping-fast text-clipped m-auto"></i>
+                    </div>
+                    <div class="our-services-description">
+                        <h5 class="text-uppercase font-weight-bold">Free Worldwide Shipping</h5>
+                        <p>Free shipping for all orders over Rs.10000</p>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3 mb-5">
+                    <div class="our-services-icon d-flex mx-auto mb-3">
+                        <i class="fal fa-sync text-clipped d-flex mb-3 m-auto"></i>
+                    </div>
+                    <div class="our-services-description">
+                        <h5 class="text-uppercase font-weight-bold">Money back guarantee</h5>
+                        <p>We return money with in 30 days</p>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3 mb-5">
+                    <div class="our-services-icon d-flex mx-auto mb-3">
+                        <i class="fal fa-headset text-clipped d-flex mb-3 m-auto"></i>
+                    </div>
+                    <div class="our-services-description ">
+                        <h5 class="text-uppercase font-weight-bold">24/7 customer support</h5>
+                        <p>On demand 24/7 customer support</p>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3 mb-5">
+                    <div class="our-services-icon d-flex mx-auto mb-3">
+                        <i class="fal fa-credit-card text-clipped d-flex mb-3 m-auto"></i>
+                    </div>
+                    <div class="our-services-description">
+                        <h5 class="text-uppercase font-weight-bold">Secure online payment</h5>
+                        <p>We use top of the line data encryption.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- End services -->
+
+    <!-- start footer -->
+    <footer class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-6">
+                    <address>
+                        <strong class="h3 font-weight-normal">
+                            Electrfied Tech
+                        </strong><br>
+                        1234 example street <br>
+                        Karachi, Example 09874
+                        Phone:(021) 344-78546
+                    </address>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="footer-title">
+                        <h5>Our Mission</h5>
+                        <span class="custom-border"></span>
+                    </div>
+                    <ul class="footer-list">
+                        <li>
+                            <a class="footer-list" href="#">lorem</a>
+                        </li>
+                        <li>
+                            <a class="footer-list" href="#">lorem</a>
+                        </li>
+                        <li>
+                            <a class="footer-list" href="#">lorem</a>
+                        </li>
+                        <li>
+                            <a class="footer-list" href="#">lorem</a>
+                        </li>
+                        <li>
+                            <a class="footer-list" href="#">lorem</a>
+                        </li>
+                    </ul>
+
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="footer-title">
+                        <h5>Customer Service</h5>
+                        <span class="custom-border"></span>
+                    </div>
+                    <ul class="footer-list">
+                        <li>
+                            <a class="footer-link" href="#">lorem</a>
+                        </li>
+                        <li>
+                            <a class="footer-link" href="#">lorem</a>
+                        </li>
+                        <li>
+                            <a class="footer-link" href="#">lorem</a>
+                        </li>
+                        <li>
+                            <a class="footer-link" href="#">lorem</a>
+                        </li>
+                        <li>
+                            <a class="footer-link" href="#">lorem</a>
+                        </li>
+                    </ul>
+                </div>
+                <hr class=" line mt-5">
+                <div class="w-100 d-md-flex justify-content-between align-items-center text center text-md-left">
+                    <div class="order-2 ml-3">
+                        <a class="footer-link" href="#">lorem</a>
+                        <a class="footer-link ml-3" href="#">lorem</a>
+                        <a class="footer-link ml-3" href="#">lorem</a>
+                    </div>
+                    <p class="m-0 text-sm order-1">
+                        &copy; 2019 Electrified tech. All rghts reserved.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- End footer -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Bootstrap 4 dependency -->
+    <script src="popper.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+
+    <!-- bootbox code -->
+    <script src="bootbox.min.js"></script>
+    <script src="bootbox.locales.min.js"></script>
+    <script>
+        $(document).on("click", ".show-alert", function (e) {
+            bootbox.alert("Hello world!", function () {
+                console.log("Alert Callback");
+            });
+        });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+    <script>
+        $("#myModal").on("show", function () {    // wire up the OK button to dismiss the modal when shown
+            $("#myModal a.btn").on("click", function (e) {
+                console.log("button pressed");   // just as an example...
+                $("#myModal").modal('hide');     // dismiss the dialog
+            });
+        });
+
+        $("#myModal").on("hide", function () {    // remove the event listeners when the dialog is dismissed
+            $("#myModal a.btn").off("click");
+        });
+
+        $("#myModal").on("hidden", function () {  // remove the actual elements from the DOM when fully hidden
+            $("#myModal").remove();
+        });
+
+        $("#myModal").modal({                    // wire up the actual modal functionality and show the dialog
+            "backdrop": "static",
+            "keyboard": true,
+            "show": true                     // ensure the modal is shown immediately
+        });
+        bootbox.alert(message);
+    </script>
+</body>
+
+</html>
