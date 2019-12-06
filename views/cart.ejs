@@ -31,7 +31,7 @@
 		<% } %>
 		
 		<div class="custom-nav-container d-flex align-items-center justify-content-between px-2 py-1 shadow-sm">
-			<a class="text-clipped navbar-brand" href="index.html">
+			<a class="text-clipped navbar-brand" href="/home">
 				<i class="fal fa-bolt d-flex">
 					<span class="m-auto"> Electrified</span>
 				</i>
@@ -43,7 +43,7 @@
 					<div class="btn-toggle-nav"></div>
 					<ul class="navbar nav d-flex">
 						<li class="nav-item">
-							<a class="nav-link" href="/homeloggedin">Home
+							<a class="nav-link" href="/home">Home
 							</a>
 						</li class="nav-item">
 						<li>
@@ -74,55 +74,41 @@
 						<div class="dropdown-menu show" x-placement="bottom-start"
 							style="position: absolute;will-change: transform;padding-bottom: 0px;padding-top: 0px;top: 0px;left: 0px;transform: translate3d(50px, -56px, 0px);">
 							<div class="search-container">
-								<form action="/action_page.php" ;">
+								<form action="/search" ;">
 									<input type="text" placeholder="Search.." name="search" style="
-border-top-width: 00px;
-border-bottom-width: 0px;
-border-right-width: 0px;
-border-left-width: 0px;
-padding-bottom: 0px;
-padding-top: 0px;
-">
+						    border-top-width: 00px;
+						    border-bottom-width: 0px;
+						    border-right-width: 0px;
+						    border-left-width: 0px;
+						    padding-left: 5px;
+						    ">
 									<button class="btn btn-bg my-2 type=" submit"="">Go</button>
 								</form>
 							</div>
 						</div>
-					</div>
-				</div>
-				<div class="nav-icons">
-					<a href="/cart">
-						<i class="fal fa-shopping-bag bag-item-count text-clipped" style="margin-left: 20px;"></i>
-						<span class="badge">3</span>
-
-					</a>
-				</div>
-				<div class="nav-icons">
-					<div class="dropdown ">
-						<a href="" data-toggle="dropdown">
-							<i class="fal fa-user text-clipped "></i>
-						</a>
-						<div class="dropdown-menu ">
-							<form action="" class="p-2 text-secondary">
-								<div class="form-group">
-									<input type="email" name="form-control" placeholder="Enter email" required>
-								</div>
-								<div class="form-group">
-									<input type="password" name="form-control" placeholder="Enter password" required>
-								</div>
-								<div class="form-check">
-									<input type="checkbox" class="form-check-input id=" dropdown-checkbox">
-									<label class="form-check-label" for="dropdown-checkbox">
-										Remember me
-									</label>
-								</div>
-								<button type="submit" class="btn btn-bg my-2">Log in</button>
-							</form>
-							<div class="dropdown-divider mt-0"> </div>
-							<a class="dropdown-item" href="sign_up_form.html">Don't have an account? Sign up</a>
-							<a class="dropdown-item" href="#">Forget your password? Reset now</a>
 						</div>
-					</div>
-				</div>
+						</div>
+						<div class="nav-icons">
+							<a href="/cartdisplay">
+								<i class="fal fa-shopping-bag bag-item-count text-clipped" style="margin-left: 20px;"></i>
+								<span class="badge"></span>
+						
+							</a>
+						</div>
+						<div class="nav-icons">
+							<div class="dropdown d-inline-block">
+								<a href="#" class="icontext mr-4 dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+									<img class="icon icon-sm rounded-circle" src="images/person-solid.png"
+										style="width: 27%;height: 20%; size: 0.2rem; margin-left: 20px;">
+								</a> <!-- iconbox // -->
+								<div class="dropdown-menu dropdown-menu-right m-0 mt-4" x-placement="bottom-end"
+									style="position: absolute; will-change: transform; top: 0px; left: 20px; transform: translate3d(0px, 32px, 0px);">
+									<a class="dropdown-item" href="./profile">My profile</a>
+									<a class="dropdown-item" href="#">Settings</a>
+									<a class="dropdown-item" href="/logout">Log out</a>
+								</div>
+							</div>
+						</div>
 				<div class="nav-icon d-lg-none">
 
 					<div class="dropdown ">
@@ -153,6 +139,11 @@ padding-top: 0px;
 		<% if (!outofquantity) { %>
 		<section class="container content-section">
 			<h2 class="text-clipped text-center">CART</h2>
+			<div class="cart-row">
+			<h3>	<strong>Product </strong></h3>
+			<h3 style="margin-left: 30%;"> <strong>Price </strong></h3>
+			<h3 style="margin-left: 14%;"> <strong>Quantity </strong></h3>
+			</div>
 			<% result.forEach(function(result){ %>
 			<div class="cart-row">
 				<span class="cart-item cart-header cart-column"><%= result.name%></span>

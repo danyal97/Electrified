@@ -15,7 +15,7 @@ const InsertIntoCart = (req, res) => {
       if (err) {
         res.status(500).send({ error: err.message });
       }
-      res.redirect("/cartdisplay");
+      res.redirect("back");
       //   console.log(result.length);
       //   res.json(true);
     });

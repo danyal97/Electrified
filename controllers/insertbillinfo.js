@@ -16,7 +16,7 @@ const InsertBillInfo = (req, res) => {
         } else {
           // console.log(result.insertId);
           // req.session.user = result.insertId;
-          res.redirect("/home");
+          res.redirect("/customerorder");
         }
       }
     );

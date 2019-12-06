@@ -76,9 +76,9 @@
                     </div>
                 </div>
                 <div class="nav-icons">
-                    <a href="/cart">
+                    <a href="/cartdisplay">
                         <i class="fal fa-shopping-bag bag-item-count text-clipped" style="margin-left: 20px;"></i>
-                        <span class="badge">3</span>
+                        <span class="badge"></span>
 
                     </a>
                 </div>
@@ -136,12 +136,13 @@
                 <br>
                 <h6>Search by price:</h6>
                 <ul>
-                    <li><a href="#">above 50000</a></li>
-                    <li><a href="#">40000>50000</a></li>
-                    <li><a href="#">30000>40000</a></li>
-                    <li><a href="#">20000>30000</a></li>
-                    <li><a href="#">10000>20000</a></li>
-                    <li><a href="#">below 10000</a></li>
+                        <li><a href="/searchcategoryprice?search=LEDs&price=50000&price2=1000000000000000000000000000">above 50000</a>
+                        </li>
+                        <li><a href="/searchcategoryprice?search=LEDs&price=40000&price2=50000">40000>50000</a></li>
+                        <li><a href="/searchcategoryprice?search=LEDs&price=30000&price2=40000">30000>40000</a></li>
+                        <li><a href="/searchcategoryprice?search=LEDs&price=20000&price2=30000">20000>30000</a></li>
+                        <li><a href="/searchcategoryprice?search=LEDs&price=10000&price2=20000">10000>20000</a></li>
+                        <li><a href="/searchcategoryprice?search=LEDs&price=0&price2=10000">below 10000</a></li>
                 </ul>
             </div>
 
@@ -184,10 +185,10 @@
                 <div class="col-sm-7 text-right text-center-xs">
                     <ul class="pagination" style="float: right;">
                         <li><a href=""><i class="fa fa-chevron-left"></i></a></li>
-                        <li><a href="">1</a></li>
-                        <li><a href="">2</a></li>
-                        <li><a href="">3</a></li>
-                        <li><a href="">4</a></li>
+                        <li><a href="/display?page=1&limit=4">1</a></li>
+                        <li><a href="/display?page=2&limit=4">2</a></li>
+                        <li><a href="/display?page=2&limit=4">3</a></li>
+                        <li><a href="/display?page=4&limit=4">4</a></li>
                         <li><a href=""><i class="fa fa-chevron-right"></i></a></li>
                     </ul>
                 </div>

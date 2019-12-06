@@ -41,7 +41,7 @@
       // failed.", it means you probably did not give permission for the browser to
       // locate you.
       var map, infoWindow;
-      var socket = io("http://localhost:3000/");
+      var socket = io("http://localhost:3000");
       function initMap() {
         infoWindow = new google.maps.InfoWindow();
         // Try HTML5 geolocation.
@@ -62,7 +62,12 @@
                 draggable: true,
                 animation: google.maps.Animation.DROP,
                 map: map,
-                title: "Your Current Location"
+                title:
+                  "Your Current Location is lat " +
+                  pos.lat +
+                  " and lng " +
+                  pos.lng +
+                  "."
               });
               // marker.addMarkerWithTimeout(pos, 2);
               marker.setMap(map);
@@ -70,10 +75,11 @@
               // marker.setMap(null);
               // console.log(pos);
               socket.emit("position", { pos: pos });
-              // socket.on("position2", function(pos) {
-              // setTimeout(function() {
-              //   window.location.reload(1);
-              // }, 30);
+              // socket.on("packageposition", function(pos) {
+              //   socket.emit("packageposition2", { pos: pos });
+              //   // setTimeout(function() {
+              //   //   window.location.reload(1);
+              //   // }, 30);
               // });
               infoWindow.setPosition(pos);
               infoWindow.setContent("Location found.");

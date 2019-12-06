@@ -7,6 +7,7 @@ const UpdateProfile = require("../controllers/update");
 const GetLoginCustomer = require("../controllers/getlogincustomer");
 const Search = require("../controllers/search");
 const CustomerOrderDetails = require("../controllers/customerorderdetails");
+const PriceSorting = require("../controllers/pricesorting");
 const express = require("express");
 const router = express.Router();
 
@@ -26,6 +27,7 @@ router.get("/search", Search);
 
 router.get("/customerorder", CustomerOrderDetails);
 
+router.get("/searchcategoryprice", PriceSorting);
 // router.put("/updateprofile", UpdateProfile);
 // router.get(
 //   "/updateprofile/:fullname/:email/:gender/address/:phone",

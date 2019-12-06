@@ -59,9 +59,9 @@
                     </a>
                 </div>
                 <div class="nav-icons">
-                    <a href="/cart">
+                    <a href="#">
                         <i class="fal fa-shopping-bag bag-item-count text-clipped"></i>
-                        <span class="badge">3</span>
+                        <span class="badge"></span>
 
                     </a>
                 </div>
@@ -71,12 +71,12 @@
                             <i class="fal fa-user text-clipped "></i>
                         </a>
                         <div class="dropdown-menu ">
-                            <form action="/login" class="p-2 text-secondary">
+                            <form action="/login" class="p-2 text-secondary" method='POST'>
                                 <div class="form-group">
-                                    <input type="email" name="form-control" placeholder="Enter email" required>
+                                    <input type="email" class="form-control" name="email" placeholder="Enter email" required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="password" name="form-control" placeholder="Enter password" required>
+                                    <input type="password" class="form-control" name="password" placeholder="Enter password" required>
                                 </div>
                                 <div class="form-check">
                                     <input type="checkbox" class="form-check-input id=" dropdown-checkbox">
@@ -86,9 +86,12 @@
                                 </div>
                                 <button type="submit" class="btn btn-bg my-2">Log in</button>
                             </form>
+                
+                
+                
+                
                             <div class="dropdown-divider mt-0"> </div>
                             <a class="dropdown-item" href="./register">Don't have an account? Sign up</a>
-                            <a class="dropdown-item" href="#">Forget your password? Reset now</a>
                         </div>
                     </div>
                 </div>

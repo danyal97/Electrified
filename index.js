@@ -17,7 +17,7 @@ const TwoHours = 10 * 60 * 60 * 2;
 const StripeSecretKey = process.env.STRIPE_SECRET_KEY;
 const socket = require("socket.io");
 const db = require("./database");
-
+currentpos = [];
 // if (process.env.NODE_ENV !== "production") {
 //   require("dotenv");
 // }
@@ -76,28 +76,29 @@ const io = socket(server);
 // });
 
 io.sockets.on("connection", function(socket) {
-  // console.log(socket.id);
-  // var position;
-  // socket.emit("news", { hello: "world" });
+  // var position = [];
   socket.on("position", function(pos) {
-    // console.log(session.user, pos.pos.lat, pos.pos.lng);
-    db.query(
-      "DELETE from map where d_id=? and c_id=?",
-      [4, 141],
-      (err, result) => {
-        db.query(
-          "insert into map set c_id=?,lat=?,lng=?,d_id=?",
-          [141, pos.pos.lat, pos.pos.lng, 4],
-          (err, result) => {}
-        );
-      }
-    );
     // console.log(pos);
-    // position = pos;
-    // socket.emit("position2", { pos: "danyal" });
-    // let query="Insert"
+    socket.broadcast.emit("packageposition", { pos: pos });
+    // position.push(pos);
+    // return position;
+    // console.log(pos);
+    socket.on("setpackageposition", function(pos) {
+      console.log("setpackageposition");
+      console.log(pos);
+      db.query(
+        "DELETE from map where d_id=? and c_id=?",
+        [4, 141],
+        (err, result) => {
+          db.query(
+            "insert into map set c_id=?,lat=?,lng=?,d_id=?",
+            [141, pos.pos.lat, pos.pos.lng, 4],
+            (err, result) => {}
+          );
+        }
+      );
+    });
   });
-  // console.log(position);
-  // socket.emit()
+
   // console.log(position);
 });
